@@ -236,7 +236,13 @@ export default function App() {
 
             <div style={{ display:'flex', gap:'0.7rem' }}>
               <button style={{ flex:1, padding:'0.65rem', borderRadius:50, border:'none', background:'linear-gradient(135deg,#3BBFEF,#5DD9B0)', color:'white', fontFamily:'Nunito,sans-serif', fontWeight:800, fontSize:'0.82rem', cursor:'pointer' }}>
-                {modal.source === 'maps' ? '🗺️ Apri in Maps' : '✉️ Contatta'}
+                <button onClick={() => window.open(`https://www.google.com/maps/search/${encodeURIComponent(modal.name + ' ' + modal.address)}`, '_blank')} style={{
+  flex:1, padding:'0.65rem', borderRadius:50, border:'none',
+  background:'linear-gradient(135deg,#3BBFEF,#5DD9B0)', color:'white',
+  fontFamily:'Nunito,sans-serif', fontWeight:800, fontSize:'0.82rem', cursor:'pointer'
+}}>
+  🗺️ Apri in Maps
+</button>
               </button>
               <button onClick={() => setModal(null)} style={{ flex:1, padding:'0.65rem', borderRadius:50, border:'1.5px solid rgba(59,191,239,.18)', background:'#F0F9FF', color:'#6B8EA0', fontFamily:'Nunito,sans-serif', fontWeight:800, fontSize:'0.82rem', cursor:'pointer' }}>
                 Chiudi
